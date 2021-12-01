@@ -10,18 +10,23 @@ public class MenuNavigate : MonoBehaviour
         // SceneManager.LoadScene("Scenes/Level1");
     }
 
+    public void Menu()
+    {
+        SceneManager.LoadScene("Scenes/Menu");
+    }
+
     public void Controls()
     {
-        // SceneManager.LoadScene("Scenes/Controls");
+        SceneManager.LoadScene("Scenes/UI/Controls");
     }
 
     public void Score()
     {
-        // SceneManager.LoadScene("Scenes/Scoreboard");
+        SceneManager.LoadScene("Scenes/UI/Score");
     }
 
     public void Exit()
     {
-        // SceneManager.LoadScene("Scenes/Exit");
+        SceneManager.LoadScene("Scenes/UI/Exit");
     }
 }
