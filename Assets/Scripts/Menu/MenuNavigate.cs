@@ -7,7 +7,7 @@ public class MenuNavigate : MonoBehaviour
 {
     public void Play()
     {
-        // SceneManager.LoadScene("Scenes/Level1");
+        SceneManager.LoadScene("Scenes/Game/Level1");
     }
 
     public void Menu()
@@ -22,7 +22,7 @@ public class MenuNavigate : MonoBehaviour
 
     public void Score()
     {
-        SceneManager.LoadScene("Scenes/UI/Score");
+        SceneManager.LoadScene("Scoreboard");
     }
 
     public void Exit()
