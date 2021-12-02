@@ -7,7 +7,8 @@ public class MovePlayer : MonoBehaviour
 {
 
     public CharacterController controller;
-
+    public Transform playerBody;
+    public GameObject melee;
     public float speed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 80f;
@@ -18,6 +19,8 @@ public class MovePlayer : MonoBehaviour
     public float groundDist = 0.4f;
     public LayerMask groundMask;
 
+    private Vector3 mousePos;
+    private Vector3 objectPos;
     private Vector3 velocity;
     public bool highJ;
     private bool isGrounded;
@@ -49,5 +52,19 @@ public class MovePlayer : MonoBehaviour
         velocity.y += mass * gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+        
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            LaunchMelee();
+        }
+    }
+    
+    private void LaunchMelee()
+    {
+        mousePos = Input.mousePosition;
+        mousePos.z = 2.0f;
+        objectPos = Camera.main.ScreenToWorldPoint(mousePos);
+        Instantiate(melee, objectPos, playerBody.transform.rotation);
+        // Instantiate(melee, playerBody.transform.position + Vector3.forward * 6, playerBody.transform.rotation);
     }
 }
