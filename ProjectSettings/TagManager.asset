@@ -9,6 +9,7 @@ TagManager:
   - Dog
   - Enemy
   - Melee
+  - Coin
   layers:
   - Default
   - TransparentFX
